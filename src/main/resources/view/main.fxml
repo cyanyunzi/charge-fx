@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0"
+         prefWidth="986.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1"
+         xmlns="http://javafx.com/javafx/8" fx:controller="app.controller.MainController" fx:id="tabPane">
+    <tabs>
+        <Tab text="水费账单" fx:id="shui" />
+        <Tab text="电费账单" fx:id="dian" />
+        <Tab text="网费账单" fx:id="wang" />
+    </tabs>
+</TabPane>

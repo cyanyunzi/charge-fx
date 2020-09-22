@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+           orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.AddController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="696.0">
+            <children>
+                <Text layoutX="37.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="年:"/>
+                <Text layoutX="37.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="月:"/>
+                <Text layoutX="32.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="房间号:"/>
+                <Text layoutX="32.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="抄表值:"/>
+                <ChoiceBox layoutX="83.0" layoutY="6.0" prefWidth="150.0" fx:id="yearSelect"/>
+                <ChoiceBox layoutX="83.0" layoutY="46.0" prefWidth="150.0" fx:id="monthSelect"/>
+                <ChoiceBox layoutX="83.0" layoutY="87.0" prefWidth="150.0" fx:id="roomSelect"/>
+                <TextField layoutX="83.0" layoutY="128.0" fx:id="currentCount"/>
+                <Button layoutX="80.0" layoutY="159.0" mnemonicParsing="false" text="添加流水" fx:id="add"
+                        onAction="#addChildToTable"/>
+                <Button layoutX="160.0" layoutY="159.0" mnemonicParsing="false" text="删除流水" fx:id="delete"
+                        onAction="#deleteDetail"/>
+                <Button layoutX="240.0" layoutY="159.0" mnemonicParsing="false" text="结算流水" fx:id="settle"
+                        onAction="#settleDetail"/>
+                <Button layoutX="320.0" layoutY="159.0" mnemonicParsing="false" text="生成主账单" fx:id="save"
+                        onAction="#saveMainCharge"/>
+
+            </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+            <children>
+                <TableView prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
+                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
+                           fx:id="table">
+                    <columns>
+                        <TableColumn prefWidth="50.0" text="年份" fx:id="columnYear"/>
+                        <TableColumn prefWidth="51.0" text="月份" fx:id="columnMonth"/>
+                        <TableColumn prefWidth="56.0" text="类型" fx:id="columnType"/>
+                        <TableColumn prefWidth="64.0" text="房号" fx:id="columnRoom"/>
+                        <TableColumn prefWidth="79.0" text="上次抄表值" fx:id="columnPre"/>
+                        <TableColumn prefWidth="70.0" text="本次抄表值" fx:id="columnCurrent"/>
+                        <TableColumn prefWidth="67.0" text="本次用量" fx:id="columnCount"/>
+                        <TableColumn prefWidth="76.0" text="本次收费" fx:id="columnCharge"/>
+                        <TableColumn prefWidth="84.0" text="结算状态" fx:id="columnStatus"/>
+                    </columns>
+                </TableView>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
