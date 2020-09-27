@@ -2,31 +2,27 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-           orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.DetailController">
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.DetailController">
     <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="696.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="129.0" prefWidth="597.0">
             <children>
-                <Button layoutX="240.0" layoutY="159.0" mnemonicParsing="false" text="结算流水" fx:id="settle"
-                        onAction="#settleDetail"/>
+                <Button fx:id="settle" layoutX="14.0" layoutY="159.0" mnemonicParsing="false" onAction="#settleDetail" text="结算流水" />
             </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
             <children>
-                <TableView prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0"
-                           AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"
-                           fx:id="table">
+                <TableView fx:id="table" prefHeight="196.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="50.0" text="年份" fx:id="columnYear"/>
-                        <TableColumn prefWidth="51.0" text="月份" fx:id="columnMonth"/>
-                        <TableColumn prefWidth="56.0" text="类型" fx:id="columnType"/>
-                        <TableColumn prefWidth="64.0" text="房号" fx:id="columnRoom"/>
-                        <TableColumn prefWidth="79.0" text="上次抄表值" fx:id="columnPre"/>
-                        <TableColumn prefWidth="70.0" text="本次抄表值" fx:id="columnCurrent"/>
-                        <TableColumn prefWidth="67.0" text="本次用量" fx:id="columnCount"/>
-                        <TableColumn prefWidth="76.0" text="本次收费" fx:id="columnCharge"/>
-                        <TableColumn prefWidth="84.0" text="结算状态" fx:id="columnStatus"/>
+                        <TableColumn fx:id="columnYear" prefWidth="50.0" text="年份" />
+                        <TableColumn fx:id="columnMonth" prefWidth="51.0" text="月份" />
+                        <TableColumn fx:id="columnType" prefWidth="56.0" text="类型" />
+                        <TableColumn fx:id="columnRoom" prefWidth="64.0" text="房号" />
+                        <TableColumn fx:id="columnPre" prefWidth="79.0" text="上次抄表值" />
+                        <TableColumn fx:id="columnCurrent" prefWidth="70.0" text="本次抄表值" />
+                        <TableColumn fx:id="columnCount" prefWidth="67.0" text="本次用量" />
+                        <TableColumn fx:id="columnCharge" prefWidth="76.0" text="本次收费" />
+                        <TableColumn fx:id="columnStatus" prefWidth="84.0" text="结算状态" />
                     </columns>
                 </TableView>
             </children>

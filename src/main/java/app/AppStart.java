@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("app.mapper")
-public class Start extends AbstractJavaFxApplicationSupport {
+public class AppStart extends AbstractJavaFxApplicationSupport {
 
   public static void main(String[] args) {
     Thread.setDefaultUncaughtExceptionHandler(
@@ -21,6 +21,7 @@ public class Start extends AbstractJavaFxApplicationSupport {
           Throwable cause = e.getCause().getCause();
           FxUtils.alertError(cause.getMessage());
         });
-    launch(Start.class, MainView.class, args);
+
+    launch(AppStart.class, MainView.class, args);
   }
 }

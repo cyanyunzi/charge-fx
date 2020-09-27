@@ -2,46 +2,43 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
-<SplitPane dividerPositions="0.24029850746268658" orientation="VERTICAL" prefHeight="200.0"
-           prefWidth="160.0" xmlns:fx="http://javafx.com/fxml/1"
-           xmlns="http://javafx.com/javafx/8" fx:controller="app.controller.ListController" fx:id="listSplitPane">
+<?import javafx.scene.text.*?>
+
+<SplitPane fx:id="listSplitPane" dividerPositions="0.24029850746268658" orientation="VERTICAL" prefHeight="803.0" prefWidth="1052.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.ListController">
     <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="1050.0">
             <children>
-                <Text layoutX="13.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="年:"/>
-                <Text layoutX="222.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="月:"/>
-                <Text layoutX="433.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="状态:"/>
-                <ChoiceBox layoutX="39.0" layoutY="10.0" prefWidth="150.0" fx:id="yearSelect"/>
-                <ChoiceBox layoutX="251.0" layoutY="10.0" prefWidth="150.0" fx:id="monthSelect"/>
-                <ChoiceBox layoutX="469.0" layoutY="10.0" prefWidth="150.0" fx:id="statusSelect"/>
-                <Button layoutX="644.0" layoutY="10.0" mnemonicParsing="false" text="查询" onAction="#fushTable"/>
-                <Button layoutX="715.0" layoutY="10.0" mnemonicParsing="false" text="重置" onAction="#rest"/>
-                <Button layoutX="21.0" layoutY="104.0" mnemonicParsing="false" text="新增账单" onAction="#addView"/>
-                <Button layoutX="106.0" layoutY="104.0" mnemonicParsing="false" text="结算账单" onAction="#updateStatus"/>
-                <Button layoutX="195.0" layoutY="104.0" mnemonicParsing="false" text="查看账单" onAction="#detailView"/>
-                <Button layoutX="277.0" layoutY="104.0" mnemonicParsing="false" text="删除账单" onAction="#deleteMain"/>
-                <Button layoutX="358.0" layoutY="104.0" mnemonicParsing="false" text="备份账单"/>
+                <Text layoutX="13.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="年:" />
+                <Text layoutX="222.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="月:" />
+                <Text layoutX="433.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="状态:" />
+                <ChoiceBox fx:id="yearSelect" layoutX="39.0" layoutY="10.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="monthSelect" layoutX="251.0" layoutY="10.0" prefWidth="150.0" />
+                <ChoiceBox fx:id="statusSelect" layoutX="469.0" layoutY="10.0" prefWidth="150.0" />
+                <Button layoutX="644.0" layoutY="10.0" mnemonicParsing="false" onAction="#fushTable" text="查询" />
+                <Button layoutX="715.0" layoutY="10.0" mnemonicParsing="false" onAction="#rest" text="重置" />
+                <Button layoutX="21.0" layoutY="104.0" mnemonicParsing="false" onAction="#addView" text="新增账单" />
+                <Button layoutX="106.0" layoutY="104.0" mnemonicParsing="false" onAction="#updateStatus" text="结算账单" />
+                <Button layoutX="195.0" layoutY="104.0" mnemonicParsing="false" onAction="#detailView" text="查看账单" />
+                <Button layoutX="277.0" layoutY="104.0" mnemonicParsing="false" onAction="#deleteMain" text="删除账单" />
+                <Button layoutX="358.0" layoutY="104.0" mnemonicParsing="false" text="备份账单" />
             </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
             <children>
-                <TableView layoutX="7.0" prefHeight="506.0" prefWidth="893.0"
-                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" fx:id="table">
+                <TableView fx:id="table" layoutX="7.0" prefHeight="506.0" prefWidth="893.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="年份" fx:id="columnYear"/>
-                        <TableColumn prefWidth="75.0" text="月份" fx:id="columnMonth"/>
-                        <TableColumn prefWidth="75.0" text="类型" fx:id="columnType"/>
-                        <TableColumn prefWidth="96.0" text="房号" fx:id="columnRoom"/>
-                        <TableColumn prefWidth="96.0" text="上次抄表值" fx:id="columnPre"/>
-                        <TableColumn prefWidth="96.0" text="本次抄表值" fx:id="columnCurrent"/>
-                        <TableColumn prefWidth="96.0" text="本次用量" fx:id="columnCount"/>
-                        <TableColumn prefWidth="93.0" text="收费" fx:id="columnCharge"/>
-                        <TableColumn prefWidth="93.0" text="付费" fx:id="columnRealCharge" editable="true"
-                                     onEditCommit="#updateRealCharge"/>
-                        <TableColumn prefWidth="93.0" text="盈亏" fx:id="columnProfit"/>
-                        <TableColumn prefWidth="105.0" text="结算状态" fx:id="columnStatus"/>
+
+                        <TableColumn fx:id="columnYear" prefWidth="75.0" text="年份" />
+                        <TableColumn fx:id="columnMonth" prefWidth="75.0" text="月份" />
+                        <TableColumn fx:id="columnType" prefWidth="75.0" text="类型" />
+                        <TableColumn fx:id="columnRoom" prefWidth="96.0" text="房号" />
+                        <TableColumn fx:id="columnPre" prefWidth="96.0" text="上次抄表值" />
+                        <TableColumn fx:id="columnCurrent" prefWidth="96.0" text="本次抄表值" />
+                        <TableColumn fx:id="columnCount" prefWidth="96.0" text="本次用量" />
+                        <TableColumn fx:id="columnCharge" prefWidth="93.0" text="收费" />
+                        <TableColumn fx:id="columnRealCharge" editable="true" onEditCommit="#updateRealCharge" prefWidth="93.0" text="付费" />
+                        <TableColumn fx:id="columnProfit" prefWidth="93.0" text="盈亏" />
+                        <TableColumn fx:id="columnStatus" prefWidth="105.0" text="结算状态" />
                     </columns>
                 </TableView>
             </children>

@@ -1,6 +1,6 @@
 package app.controller;
 
-import app.Start;
+import app.AppStart;
 import app.contants.Contant;
 import app.entity.Charge;
 import app.service.ChargeService;
@@ -28,6 +28,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 /**
  * @author ：林雾
@@ -69,11 +70,14 @@ public class ListController implements Initializable {
 
     initColumn();
     fushTable();
+
+    Collectors.toList();
+    table.getItems().stream().collect(Collectors.toList());
   }
 
   @FXML
   public void addView() {
-    Start.showView(AddView.class, Modality.WINDOW_MODAL);
+    AppStart.showView(AddView.class, Modality.WINDOW_MODAL);
   }
 
   @FXML
@@ -90,7 +94,7 @@ public class ListController implements Initializable {
     }
 
     // 弹出视图
-    Start.showView(DetailView.class, Modality.WINDOW_MODAL);
+    AppStart.showView(DetailView.class, Modality.WINDOW_MODAL);
   }
 
   @FXML
@@ -129,6 +133,7 @@ public class ListController implements Initializable {
     columnStatus.setCellValueFactory(new PropertyValueFactory("status"));
     columnProfit.setCellValueFactory(new PropertyValueFactory("profit"));
     columnRealCharge.setCellValueFactory(new PropertyValueFactory("realCharge"));
+
     columnRealCharge.setCellFactory(
         TextFieldTableCell.forTableColumn(new BigDecimalStringConverter()));
   }

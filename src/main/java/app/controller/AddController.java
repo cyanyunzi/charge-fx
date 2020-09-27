@@ -5,7 +5,6 @@ import app.entity.Charge;
 import app.service.ChargeService;
 import app.utils.ExUtils;
 import app.utils.FxUtils;
-import app.view.AddView;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 import com.sun.javafx.collections.ObservableListWrapper;
