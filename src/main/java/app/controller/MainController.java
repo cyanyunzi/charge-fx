@@ -23,7 +23,6 @@ public class MainController implements Initializable {
 
   @FXML private Tab shui;
   @FXML private Tab dian;
-  @FXML private Tab wang;
   @FXML private TabPane tabPane;
   @Autowired private ListController listController;
   @Autowired private ListView listView;
