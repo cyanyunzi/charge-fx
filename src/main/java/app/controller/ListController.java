@@ -110,7 +110,7 @@ public class ListController implements Initializable {
       ExUtils.requireFalse("未结算".equals(child.getStatus()), format);
     }
 
-    Alert alert = FxUtils.alertConfirm("结算账单", "确认房东已结算账单?");
+    Alert alert = FxUtils.alertConfirm("结算账单", "确认结算主账单?");
     Optional<ButtonType> alertResult = alert.showAndWait();
     if (alertResult.get() == ButtonType.OK) {
       charge.setStatus("已结算");

@@ -17,10 +17,9 @@
                 <Button layoutX="644.0" layoutY="10.0" mnemonicParsing="false" onAction="#fushTable" text="查询" />
                 <Button layoutX="715.0" layoutY="10.0" mnemonicParsing="false" onAction="#rest" text="重置" />
                 <Button layoutX="21.0" layoutY="104.0" mnemonicParsing="false" onAction="#addView" text="新增账单" />
-                <Button layoutX="106.0" layoutY="104.0" mnemonicParsing="false" onAction="#updateStatus" text="结算账单" />
-                <Button layoutX="195.0" layoutY="104.0" mnemonicParsing="false" onAction="#detailView" text="查看账单" />
-                <Button layoutX="277.0" layoutY="104.0" mnemonicParsing="false" onAction="#deleteMain" text="删除账单" />
-                <Button layoutX="358.0" layoutY="104.0" mnemonicParsing="false" text="备份账单" />
+                <Button layoutX="114.0" layoutY="104.0" mnemonicParsing="false" onAction="#detailView" text="查看账单" />
+                <Button layoutX="213.0" layoutY="104.0" mnemonicParsing="false" onAction="#deleteMain" text="删除账单" />
+                <Button layoutX="309.0" layoutY="104.0" mnemonicParsing="false" text="备份账单" />
             </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

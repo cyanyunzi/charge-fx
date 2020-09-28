@@ -93,7 +93,7 @@ public class AddController implements Initializable {
 
     Charge charge =
         chargeService.addChildToTable(
-            year, month, room, currentCountValue, mainController.getShui().getText());
+            year, month, room, currentCountValue, mainController.getCurrentSelectTab().getText());
     table.getItems().add(charge);
   }
 

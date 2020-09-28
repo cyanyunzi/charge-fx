@@ -1,6 +1,14 @@
 package app.utils;
 
+import app.model.dto.ChargeExCel;
+import com.alibaba.excel.EasyExcel;
+import com.google.common.collect.Lists;
 import com.google.common.io.Files;
+
+import java.io.File;
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author ：林雾
@@ -8,20 +16,37 @@ import com.google.common.io.Files;
  * @description :
  */
 public class ExcelUtils {
-  public static final String FILE_PATH = System.getProperty("user.dir")+"/excel";
 
-  public static void create() {
-    // 获取项目路径
-    String property = System.getProperty("user.dir");
-    System.out.println(property);
-//    Files.createParentDirs(FILE_PATH);
-    // 是否有文件
-
-    // 加载文件
-    // 构建表格
+  public static String getPowerFilePath() {
+    return System.getProperty("user.dir") + "\\excel\\电费账单.xlsx";
   }
 
-  public static void main(String[] args) {
-    create();
+  public static String getWaterFilePath() {
+    return System.getProperty("user.dir") + "\\excel\\水费账单.xlsx";
+  }
+
+  public static void createParentDirs(String path) throws IOException {
+    Files.createParentDirs(new File(path));
+  }
+
+  public static void main(String[] args) throws IOException {
+    List<ChargeExCel> list = Lists.newArrayList();
+    for (int i = 0; i < 10; i++) {
+      ChargeExCel ex = new ChargeExCel();
+      ex.setYear(i);
+      ex.setMonth(i);
+      ex.setType("" + i);
+      ex.setRoom(i);
+      ex.setPreCount(i);
+      ex.setCurrentCount(i);
+      ex.setUseCount(i);
+      ex.setCharge(new BigDecimal(i));
+      ex.setStatus("" + i);
+      list.add(ex);
+    }
+
+    String fileName = getPowerFilePath();
+    createParentDirs(fileName);
+    EasyExcel.write(fileName, ChargeExCel.class).sheet("模板").doWrite(list);
   }
 }
